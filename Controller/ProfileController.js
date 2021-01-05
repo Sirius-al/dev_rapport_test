@@ -23,7 +23,7 @@ exports.getMyProfile = async (req, res, next) => {
 
 
     } catch (err) {
-      console.log(err)
+    //   console.log(err)
       res.status(500).send('Server error getting your profile!!')
     }
 }
@@ -89,7 +89,7 @@ exports.createProfile = async (req, res, next) => {
         
         
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         res.status(500).send('Server error creating Profile')
     }
 }
@@ -105,7 +105,7 @@ exports.getAllProfiles = async (req, res, next) => {
         })
 
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         res.status(500).send('Server error Getting all Profiles')
 
     }
@@ -126,7 +126,7 @@ exports.deleteProfileUserPosts = async (req, res, next) => {
         })
 
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         if (err.kind === 'ObjectId') {
             return res.status(400).json({
                 message: 'No profile found !'
@@ -156,7 +156,7 @@ exports.getProfileByUserId = async (req, res, next) => {
         })
 
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         if (err.kind === 'ObjectId') {
             return res.status(400).json({
                 message: 'No profile found !'
@@ -220,7 +220,7 @@ exports.createExperience = async (req, res, next) => {
         })
 
     } catch (err) {
-      console.log(err);
+    //   console.log(err);
       res.status(500).send('Server error creating experiences !!')
     }
     
@@ -253,7 +253,7 @@ exports.deleteExperienceById = async (req, res, next) => {
     })
 
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         res.status(500).send('Server error deleting experience by id !!')
     }
 }
@@ -307,7 +307,7 @@ exports.createEducation = async (req, res, next) => {
         })
 
     } catch (err) {
-      console.log(err);
+    //   console.log(err);
       res.status(500).send('Server error creating Education !!')
     }
     
@@ -341,7 +341,7 @@ exports.deleteEducationById = async (req, res, next) => {
     })
 
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         res.status(500).send('Server error deleting education by id !!')
     }
 }

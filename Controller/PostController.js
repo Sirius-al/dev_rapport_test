@@ -27,7 +27,7 @@ exports.postCreate = async (req, res, next) => {
         Res(res, 201, post)
         
     } catch (err) {
-      console.log(err)
+    //   console.log(err)
       res.status(500).send('Server error creating post')
     }
 }
@@ -40,7 +40,7 @@ exports.getPosts = async (req, res, next) => {
         Res(res, 200, posts)
 
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         errRes(res, 500, 'Server error creating post')
     }
 
@@ -59,7 +59,7 @@ exports.getPost = async (req, res, next) => {
         Res(res, 200, post)
 
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         if (err.kind === 'ObjectId') {
             return errRes(res, 404, 'The post You are looking is not available anymore! 😔')
         } else {
@@ -91,7 +91,7 @@ exports.deletePost = async (req, res, next) => {
         Res(res, 200, 'null')
 
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         if (err.kind === 'ObjectId') {
             return errRes(res, 404, 'The post You are looking is not available anymore! 😔')
         } else {
@@ -142,7 +142,7 @@ exports.likePost = async (req, res, next) => {
         }
         
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         errRes(res, 500, 'Server error liking post')
     }
 }
@@ -187,7 +187,7 @@ exports.unLikePost = async (req, res, next) => {
         }
         
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         errRes(res, 500, 'Server error unliking post')
     }
 }
@@ -221,7 +221,7 @@ exports.createComment = async (req, res, next) => {
         Res(res, 201, post.comments)
         
     } catch (err) {
-      console.log(err)
+    //   console.log(err)
       res.status(500).send('Server error creating comment')
     }
 }
@@ -250,7 +250,7 @@ exports.deleteComment = async (req, res, next) => {
         Res(res, 201, post.comments)
         
     } catch (err) {
-      console.log(err)
+    //   console.log(err)
       res.status(500).send('Server error deleting comment')
     }
 }

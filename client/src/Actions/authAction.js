@@ -51,7 +51,7 @@ export const register = ({ name, email, password }) => async dispatch => {
 
     try {
       const res = await axios.post('/api/users', body, config)
-      console.log(res)
+      // console.log(res)
       dispatch({ 
         type: REGISTER_SUCCESS,
         payload: res.data
@@ -60,7 +60,7 @@ export const register = ({ name, email, password }) => async dispatch => {
     } catch (err) {
         // console.log(err.response.data.error)
         const error = err.response
-        console.log(err)
+        // console.log(err)
         if (error) {
           dispatch(setAlert(error.data.error, 'danger', 2000))
         }

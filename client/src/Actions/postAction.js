@@ -17,7 +17,7 @@ export const getAllPosts = () => async dispatch => {
       dispatch({type: GET_POSTS, payload: res.data})
 
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       dispatch({type: POST_ERROR, payload: err.response})
     }
 }
@@ -77,7 +77,7 @@ export const deletePost = (id, token) => async dispatch => {
 
     } catch (err) {
       const error = err.response
-        console.log(err.response.data)
+        // console.log(err.response.data)
 
        dispatch({type: POST_ERROR, payload: error.data})
     }
@@ -91,13 +91,13 @@ export const createPost = (formData, token) => async dispatch => {
     
     try {
       const res = await backendCall.post(`/api/posts/`, formData, setHeader(token, 2))
-      console.log(res.data)
+      // console.log(res.data)
       dispatch({type: ADD_POST, payload: res.data.data })
       dispatch(setAlert('Post Created !', 'success', 3000))
 
     } catch (err) {
       const error = err.response
-        console.log(err.response)
+        // console.log(err.response)
 
        dispatch({type: POST_ERROR, payload: error.data})
       // console.log(err.data.data)
@@ -117,7 +117,7 @@ export const getPost = (id) => async dispatch => {
 
     } catch (err) {
       const error = err.response
-        console.log(err.response)
+        // console.log(err.response)
 
        dispatch({type: POST_ERROR, payload: error.data})
       // console.log(err.data.data)
@@ -138,7 +138,7 @@ export const addComment = (postId, formData, token) => async dispatch => {
 
   } catch (err) {
     const error = err.response
-      console.log(err.response)
+      // console.log(err.response)
 
      dispatch({type: POST_ERROR, payload: error.data})
     // console.log(err.data.data)
@@ -153,13 +153,13 @@ export const removeComment = (postId, commentId, token) => async dispatch => {
     
   try {
     const res = await backendCall.delete(`/api/posts/comment/${postId}/${commentId}`, setHeader(token, 2))
-    console.log(res.data)
+    // console.log(res.data)
     dispatch({type: REMOVE_COMMENT, payload: commentId })
     dispatch(setAlert('Comment Deleted !', 'danger', 3000))
 
   } catch (err) {
     const error = err.response
-      console.log(err.response)
+      // console.log(err.response)
 
      dispatch({type: POST_ERROR, payload: error.data})
      dispatch(setAlert(`${error.data.message}`, 'danger', 3000))

@@ -8,7 +8,6 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
 import { loadUser } from './Actions/authAction'
-import tokenAuth from './utils/AuthToken';
 import PrivateRoute from './components/routing/PrivateRoute'
 
 import Navbar from './components/layouts/Navbar'

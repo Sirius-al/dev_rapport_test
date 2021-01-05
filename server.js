@@ -14,7 +14,7 @@ process.on('uncaughtException', err => {
 })
 
 //? setting up the port 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 
 //! Initializing special configs
@@ -53,7 +53,7 @@ app.use(express.json({ extended: false }))
 
 var corsOptions = {
     // "Access-Control-Allow-Origin": '*',
-    origin: [`http://localhost:${PORT}`, 'https://dev-rapport.herokuapp.com/'],
+    origin: [`http://localhost:3000`, 'https://dev-rapport.herokuapp.com/'],
     optionsSuccessStatus: 200
 }
 

@@ -13,7 +13,7 @@ exports.getGithubRepos = async (req, res, next) => {
       }
       request(options, (err, response, body) => {
         if (err) {
-            console.log(err)
+            // console.log(err)
             return errRes(res, 400, `${err.message}`)
         }
         if (res.statusCode !== 200) {
@@ -25,7 +25,7 @@ exports.getGithubRepos = async (req, res, next) => {
 
 
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       res.status(500).send(' Server error getting github repos ! ');
     }
 }
